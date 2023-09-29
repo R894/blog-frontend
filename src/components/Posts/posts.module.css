@@ -1,0 +1,15 @@
+.div{
+    display:flex;
+    flex-grow: 1;
+    flex:1;
+}
+
+.card{
+    padding: 1rem;
+    margin:1rem;
+    min-width: 240px;
+    max-height: 240px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

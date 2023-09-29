@@ -1,0 +1,12 @@
+.navbar {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+li {
+    display: flex;
+    gap: 1rem;
+}
