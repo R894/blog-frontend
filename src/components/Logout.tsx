@@ -1,5 +1,5 @@
 import useAuth from "../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Logout = () => {
     const {setAuth} = useAuth();
@@ -12,7 +12,7 @@ const Logout = () => {
     }
 
     return(
-        <button onClick={handleLogout}>Logout</button>
+        <Link to="/" onClick={handleLogout}>Logout</Link>
     )
 }
 export default Logout;
