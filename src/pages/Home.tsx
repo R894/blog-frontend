@@ -1,16 +1,14 @@
 import Content from '../components/Posts/Posts';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
+import Layout from '../layouts/Layout';
+
 
 const HomePage = () => {
     return(
         <>
-            <Header/>
-            <div className='content'>
+            <Layout>
                 <h1>Home</h1>
-                <Content></Content>
-            </div>
-            <Footer/>
+                <Content/>
+            </Layout>
         </>
     );
 }

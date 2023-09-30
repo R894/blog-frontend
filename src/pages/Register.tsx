@@ -1,15 +1,12 @@
 import RegisterForm from '../components/RegisterForm/RegisterForm';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
+import Layout from '../layouts/Layout';
 
 const LoginPage = () => {
     return(
         <>
-            <Header/>
-            <div className='content'>
+            <Layout>
                 <RegisterForm/>
-            </div>
-            <Footer/>
+            </Layout>
         </>
     );
 }

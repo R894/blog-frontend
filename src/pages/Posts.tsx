@@ -1,14 +1,11 @@
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
+import Layout from '../layouts/Layout';
 
 const PostsPage = () => {
     return(
         <>
-            <Header/>
-            <div className='content'>
+            <Layout>
                 <h1>Welcome to the posts page</h1>
-            </div>
-            <Footer/>
+            </Layout>
         </>
     );
 }
