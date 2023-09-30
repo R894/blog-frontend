@@ -1,10 +1,11 @@
 import Layout from '../layouts/Layout';
+import Posts from '../components/Posts/Posts';
 
 const PostsPage = () => {
     return(
         <>
             <Layout>
-                <h1>Welcome to the posts page</h1>
+                <Posts/>
             </Layout>
         </>
     );

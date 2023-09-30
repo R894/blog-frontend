@@ -10,7 +10,7 @@ const Logout = () => {
         setAuth({});
         navigate("/");
     }
-
+    
     return(
         <Link to="/" onClick={handleLogout}>Logout</Link>
     )

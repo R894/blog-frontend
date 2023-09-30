@@ -4,6 +4,7 @@ import PostsPage from "./pages/Posts";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
 import RequireAuth from "./components/RequireAuth";
+import CreatePostPage from "./pages/CreatePost";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
     {
       path: "/posts",
       element: <RequireAuth><PostsPage/></RequireAuth>,
+    },
+    {
+      path: "/posts/new",
+      element: <RequireAuth><CreatePostPage/></RequireAuth>,
     },
     {
       path: "/login",
