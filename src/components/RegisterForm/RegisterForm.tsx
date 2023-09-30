@@ -1,5 +1,7 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import RegisterFormCSS from './registerform.module.css';
+import api from "../../api/axios";
+import LoginForm from "../LoginForm/LoginForm";
 
 const RegisterForm = () => {
     interface FormData{
@@ -15,6 +17,8 @@ const RegisterForm = () => {
         confirmPassword: '',
         email: '',
     });
+    
+    const [success, setSuccess] = useState(false);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -24,11 +28,22 @@ const RegisterForm = () => {
         });
     };
 
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        api.post('/users', {username: formData.username, password: formData.password, email: formData.email})
+            .then((res) => {
+                console.log(res)
+                setSuccess(true);
+            })
+            .catch((err) => {console.error(err)})
+    }
+
     return(
         <>
-            <div className={RegisterFormCSS.div}>
+            {success ? <LoginForm/> : (
+                <div className={RegisterFormCSS.div}>
                 <h2>Register</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <input
                             type="text"
@@ -78,6 +93,7 @@ const RegisterForm = () => {
                     </div>
                 </form>
             </div>
+            )}
         </>
     );
 }
