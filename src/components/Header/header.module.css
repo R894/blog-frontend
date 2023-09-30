@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--main-bg-color);
+    background-color: var(--secondary-bg-color);
     display: flex;
     align-items: center;
     gap: 1rem;

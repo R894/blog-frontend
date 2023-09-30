@@ -4,11 +4,16 @@
   font-weight: 400;
   height: 100vh;
   width: 100%;
-  --main-bg-color: #f7f1e3;
-  --secondary-bg-color: white;
+  --main-bg-color: #383838;
+  --secondary-bg-color: #C9C9C9;
+  --third-bg-color: #FAF7FF;
+  --main-font-color: #383838;
+  --secondary-font-color: #C9C9C9;
 }
 
 #root, body{
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -52,6 +57,7 @@ button:hover {
 
 input,
 textarea {
+  background-color: var(--third-bg-color);
   display: block;
   padding: 10px;
   margin-bottom: 10px;

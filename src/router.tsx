@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     },
     {
       path: "/posts",
-      element: <RequireAuth><PostsPage /></RequireAuth>,
+      element: <RequireAuth><PostsPage/></RequireAuth>,
     },
     {
       path: "/login",
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     },
     {
       path: "/register",
+      element: <RegisterPage/>,
+    },
+    {
+      path: "/logout",
       element: <RegisterPage/>,
     }
   ]);
