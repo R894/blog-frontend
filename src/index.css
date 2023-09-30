@@ -4,6 +4,8 @@
   font-weight: 400;
   height: 100vh;
   width: 100%;
+  --main-bg-color: #f7f1e3;
+  --secondary-bg-color: white;
 }
 
 #root, body{
