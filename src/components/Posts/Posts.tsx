@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PostsCSS from "./posts.module.css";
 import axios from "axios";
-import useAuth from "../../hooks/useAuth";
 
 const url = import.meta.env.VITE_API_URL;
 

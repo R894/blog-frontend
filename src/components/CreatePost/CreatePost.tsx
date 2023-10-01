@@ -1,8 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import api from "../../api/axios";
 import CreatePostCSS from "./createpost.module.css";
-import Posts from "../Posts/Posts";
 import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   interface FormData {
@@ -17,8 +17,17 @@ const CreatePost = () => {
 
   const [success, setSuccess] = useState(false);
   const { auth } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -45,9 +54,9 @@ const CreatePost = () => {
 
   return (
     <>
-      {success ? (
-        <Posts />
-      ) : (
+      {success ? 
+        navigate("/posts")
+       : (
         <div className={CreatePostCSS.div}>
           <h2>Register</h2>
           <form onSubmit={handleSubmit}>
@@ -63,13 +72,12 @@ const CreatePost = () => {
               />
             </div>
             <div>
-              <input
-                type="content"
+              <textarea
                 id="content"
                 name="content"
                 placeholder="content"
                 value={formData.content}
-                onChange={handleChange}
+                onChange={handleTextAreaChange}
                 required
               />
             </div>
