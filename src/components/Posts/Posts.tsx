@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PostsCSS from "./posts.module.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -8,6 +9,7 @@ interface Post {
   _id: string;
   title: string;
   content: string;
+  pubDate: string;
 }
 
 const Posts = () => {
@@ -34,7 +36,8 @@ const Posts = () => {
         <div className={PostsCSS.div}>
           {data.map((item) => (
             <div key={item._id} className={PostsCSS.card}>
-              <h3>{item.title}</h3>
+              <h3><Link to={`/posts/${item._id}`}>{item.title}</Link></h3>
+              <p>{new Date(item.pubDate).toLocaleString()}</p>
               <p>{item.content}</p>
             </div>
           ))}

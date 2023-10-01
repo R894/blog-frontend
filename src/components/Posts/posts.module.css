@@ -1,15 +1,16 @@
-.div{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
+.div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.card{
-    background-color: var(--secondary-bg-color);
-    padding: 1rem;
-    margin:1rem;
-    min-width: 240px;
-    min-height: 240px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.card {
+  background-color: var(--secondary-bg-color);
+  padding: 1rem;
+  margin: 1rem;
+  overflow: hidden;
+  min-width: 240px;
+  min-height: 240px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
