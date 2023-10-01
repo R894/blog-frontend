@@ -58,7 +58,7 @@ const CreatePost = () => {
         navigate("/posts")
        : (
         <div className={CreatePostCSS.div}>
-          <h2>Register</h2>
+          <h2>Create new Post</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <input
