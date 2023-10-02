@@ -12,9 +12,6 @@ const Header = () => {
         <>
           <li className={HeaderCSS.li}>
             <ul>
-              <Link to="/">Home</Link>
-            </ul>
-            <ul>
               <Link to="/login">Login</Link>
             </ul>
             <ul>
@@ -27,9 +24,6 @@ const Header = () => {
       return (
         <>
           <li className={HeaderCSS.li}>
-            <ul>
-              <Link to="/">Home</Link>
-            </ul>
             <ul>
               <Link to="/posts">Posts</Link>
             </ul>
@@ -47,7 +41,7 @@ const Header = () => {
 
   return (
     <div className={HeaderCSS.navbar}>
-      <h1>Blog</h1>
+      <h1><Link to="/">Blog</Link></h1>
       {renderLinks()}
     </div>
   );
