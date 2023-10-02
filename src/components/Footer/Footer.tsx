@@ -4,7 +4,10 @@ const Footer = () => {
   return (
     <>
       <div className={FooterCSS.footer}>
-        <p>Stuff goes here</p>
+        <a href="https://github.com/R894">
+          <p>R894</p>
+          <img src="/icons/github.png" style={{width: '25px', height: 'auto'}}/>
+        </a>
       </div>
     </>
   );
