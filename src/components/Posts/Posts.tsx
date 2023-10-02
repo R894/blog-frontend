@@ -28,6 +28,13 @@ const Posts = () => {
       });
   }, []);
 
+  const reduceString = (str: string, maxLength: number) => {
+    if(str.length <= maxLength){
+      return str;
+    }
+    return str.substring(0, maxLength) + "...";
+  }
+
   return (
     <>
       {isLoading ? (
@@ -38,7 +45,7 @@ const Posts = () => {
             <div key={item._id} className={PostsCSS.card}>
               <h3><Link to={`/posts/${item._id}`}>{item.title}</Link></h3>
               <p>{new Date(item.pubDate).toLocaleString()}</p>
-              <p>{item.content}</p>
+              <p>{reduceString(item.content, 150)}</p>
             </div>
           ))}
         </div>
