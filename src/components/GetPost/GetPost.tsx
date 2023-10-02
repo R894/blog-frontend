@@ -17,7 +17,7 @@ const GetPost = () => {
         api.get(`/posts/${id}`).then((res) => {
             setData(res.data);
         })
-    })
+    }, [id])
 
     return(
         <div className={GetPostCSS.card}>
