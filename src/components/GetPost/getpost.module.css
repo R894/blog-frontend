@@ -7,10 +7,9 @@
     background-color: var(--secondary-bg-color);
     padding: 1rem;
     margin: 1rem;
-    overflow: hidden;
-    min-width: 240px;
-    min-height: 240px;
-    text-align: center;
+    width: 50%;
+    min-height: 50%;
+    flex-grow: 1;
     border: 1px solid #ccc;
     border-radius: 4px;
   }

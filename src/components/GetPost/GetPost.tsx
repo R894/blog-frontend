@@ -13,6 +13,7 @@ interface DataProps {
 }
 
 const GetPost = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const [data, setData] = useState<DataProps>({
     _id: "",
@@ -26,16 +27,23 @@ const GetPost = () => {
     api.get(`/posts/${id}`).then((res) => {
       console.log(res.data);
       setData(res.data);
+      setIsLoading(false);
     });
   }, [id]);
 
   return (
-    <div className={GetPostCSS.card}>
-      <h3>{data.title}</h3>
-      <p>{new Date(data.pubDate).toLocaleString()}</p>
-      <p>{data.author.username}</p>
-      <p>{data.content}</p>
-    </div>
+    <>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className={GetPostCSS.card}>
+          <h3>{data.title}</h3>
+          <p>{new Date(data.pubDate).toLocaleString()}</p>
+          <p>{data.author.username}</p>
+          <p>{data.content}</p>
+        </div>
+      )}
+    </>
   );
 };
 export default GetPost;
