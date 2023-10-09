@@ -57,13 +57,14 @@ const CreatePost = () => {
         navigate("/posts")
        : (
         <div className="">
-          <h2>Create new Post</h2>
-          <form onSubmit={handleSubmit}>
+          <h2 className="text-2xl mb-4">Create new Post</h2>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <div>
               <input
                 type="text"
                 id="title"
                 name="title"
+                className="block p-2.5 w-full text-sm focus:outline-none text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-600 focus:border-gray-600"
                 placeholder="title"
                 value={formData.title}
                 onChange={handleChange}
@@ -75,13 +76,14 @@ const CreatePost = () => {
                 id="content"
                 name="content"
                 placeholder="content"
+                className="block p-2.5 w-full text-sm focus:outline-none text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-600 focus:border-gray-600"
                 value={formData.content}
                 onChange={handleTextAreaChange}
                 required
               />
             </div>
-            <div>
-              <button type="submit">Create new Post</button>
+            <div className="self-center">
+              <button className="btn-primary" type="submit">Create</button>
             </div>
           </form>
         </div>

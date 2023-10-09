@@ -35,7 +35,7 @@ const GetPost = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className="bg-white shadow-md rounded-lg p-8 w-64 md:w-3/4">
+        <div className="bg-white shadow-md rounded-lg p-8 h-64 min-w-[256px] w-3/4">
           <h3 className="text-3xl font-bold mb-4">{data.title}</h3>
           <p className="text-gray-600 text-sm">{new Date(data.pubDate).toLocaleString()} by {data.author.username}</p>
           <p className="mt-4">{data.content}</p>

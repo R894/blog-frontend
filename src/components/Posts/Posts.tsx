@@ -9,6 +9,9 @@ interface Post {
   title: string;
   content: string;
   pubDate: string;
+  author: {
+    username: string;
+  };
 }
 
 const Posts = () => {
@@ -20,6 +23,7 @@ const Posts = () => {
       .get(`${url}/posts`)
       .then((res) => {
         setData(res.data);
+        console.log(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -41,9 +45,9 @@ const Posts = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-3">
           {data.map((item) => (
-            <div key={item._id} className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+            <div key={item._id} className="max-w-sm p-6 min-w-fit bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
               <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><Link to={`/posts/${item._id}`}>{item.title}</Link></h3>
-              <p>{new Date(item.pubDate).toLocaleString()}</p>
+              <p className="text-gray-600 text-sm mb-4">{new Date(item.pubDate).toLocaleString()} by {item.author.username}</p>
               <p>{reduceString(item.content, 150)}</p>
             </div>
           ))}

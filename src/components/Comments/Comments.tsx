@@ -25,15 +25,15 @@ const Comments = () => {
       return <p>No comments</p>;
     }
     return commentData.map((comment, index: number) => (
-      <div key={index} className="">
-        <p id="user">{comment.user.username}</p>
+      <div key={index} className="p-6 w-64 bg-white border border-gray-200 rounded-lg shadow mt-4">
+        <p id="user" className="text-gray-600 text-sm mb-4">{comment.user.username}</p>
         <p id="comment">{comment.content}</p>
       </div>
     ));
   };
 
   return <>{isLoading ? <p>Loading...</p> : 
-  <div className="">
+  <div className="flex flex-col">
     {mapComments(data)}
   </div>
   }</>;
