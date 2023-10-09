@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import PostsCSS from "./posts.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -40,10 +39,10 @@ const Posts = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className={PostsCSS.div}>
+        <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-3">
           {data.map((item) => (
-            <div key={item._id} className={PostsCSS.card}>
-              <h3><Link to={`/posts/${item._id}`}>{item.title}</Link></h3>
+            <div key={item._id} className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+              <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900"><Link to={`/posts/${item._id}`}>{item.title}</Link></h3>
               <p>{new Date(item.pubDate).toLocaleString()}</p>
               <p>{reduceString(item.content, 150)}</p>
             </div>

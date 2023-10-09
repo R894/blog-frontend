@@ -1,5 +1,4 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import RegisterFormCSS from './registerform.module.css';
 import api from "../../api/axios";
 import LoginForm from "../LoginForm/LoginForm";
 
@@ -41,7 +40,7 @@ const RegisterForm = () => {
     return(
         <>
             {success ? <LoginForm/> : (
-                <div className={RegisterFormCSS.div}>
+                <div className="">
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
                     <div>

@@ -1,10 +1,9 @@
-import FooterCSS from "./footer.module.css";
 
 const Footer = () => {
   return (
     <>
-      <div className={FooterCSS.footer}>
-        <a href="https://github.com/R894">
+      <div className="flex justify-center">
+        <a href="https://github.com/R894" className="flex gap-1 my-2">
           <p>R894</p>
           <img src="/icons/github.png" style={{width: '25px', height: 'auto'}}/>
         </a>

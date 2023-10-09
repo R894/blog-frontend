@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
     return(
         <>
             <Header/>
-            <div className='content'>
+            <div className='flex flex-col flex-grow mx-20 items-center gap-3'>
                 {children}
             </div>
             <Footer/>

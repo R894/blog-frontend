@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import HeaderCSS from "./header.module.css";
 import useAuth from "../../hooks/useAuth";
 import Logout from "../Logout";
 
@@ -10,11 +9,11 @@ const Header = () => {
     if (!auth.token) {
       return (
         <>
-          <li className={HeaderCSS.li}>
-            <ul>
+          <li className="flex list-none gap-3">
+            <ul className="text-center">
               <Link to="/login">Login</Link>
             </ul>
-            <ul>
+            <ul className="text-center">
               <Link to="/register">Register</Link>
             </ul>
           </li>
@@ -23,14 +22,14 @@ const Header = () => {
     } else {
       return (
         <>
-          <li className={HeaderCSS.li}>
-            <ul>
+          <li className="flex list-none gap-3">
+            <ul className="text-center">
               <Link to="/posts">Posts</Link>
             </ul>
-            <ul>
+            <ul className="text-center">
               <Link to="/posts/new">Create Post</Link>
             </ul>
-            <ul>
+            <ul className="text-center">
               <Logout />
             </ul>
           </li>
@@ -40,8 +39,8 @@ const Header = () => {
   };
 
   return (
-    <div className={HeaderCSS.navbar}>
-      <h1><Link to="/">Blog</Link></h1>
+    <div className="flex p-2 gap-3 justify-between mx-3">
+      <h1 className="text-2xl"><Link to="/">Blog</Link></h1>
       {renderLinks()}
     </div>
   );

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
-import GetPostCSS from "./getpost.module.css";
 import { useParams } from "react-router-dom";
 interface DataProps {
   _id: string;
@@ -36,11 +35,10 @@ const GetPost = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className={GetPostCSS.card}>
-          <h3>{data.title}</h3>
-          <p>{new Date(data.pubDate).toLocaleString()}</p>
-          <p>{data.author.username}</p>
-          <p>{data.content}</p>
+        <div className="bg-white shadow-md rounded-lg p-8 w-64 md:w-3/4">
+          <h3 className="text-3xl font-bold mb-4">{data.title}</h3>
+          <p className="text-gray-600 text-sm">{new Date(data.pubDate).toLocaleString()} by {data.author.username}</p>
+          <p className="mt-4">{data.content}</p>
         </div>
       )}
     </>

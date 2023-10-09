@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import api from "../../api/axios";
-import CreatePostCSS from "./createpost.module.css";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
@@ -57,7 +56,7 @@ const CreatePost = () => {
       {success ? 
         navigate("/posts")
        : (
-        <div className={CreatePostCSS.div}>
+        <div className="">
           <h2>Create new Post</h2>
           <form onSubmit={handleSubmit}>
             <div>

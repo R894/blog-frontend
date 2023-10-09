@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
 import { useParams } from "react-router-dom";
-import CommentsCSS from "./comments.module.css";
 
 const Comments = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +25,7 @@ const Comments = () => {
       return <p>No comments</p>;
     }
     return commentData.map((comment, index: number) => (
-      <div key={index} className={CommentsCSS.comment}>
+      <div key={index} className="">
         <p id="user">{comment.user.username}</p>
         <p id="comment">{comment.content}</p>
       </div>
@@ -34,7 +33,7 @@ const Comments = () => {
   };
 
   return <>{isLoading ? <p>Loading...</p> : 
-  <div className={CommentsCSS.div}>
+  <div className="">
     {mapComments(data)}
   </div>
   }</>;

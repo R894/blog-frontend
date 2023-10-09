@@ -1,5 +1,4 @@
 import { useState, ChangeEvent } from "react";
-import LoginFormCSS from "./loginform.module.css";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import api from "../../api/axios";
@@ -50,7 +49,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className={LoginFormCSS.div}>
+      <div className="">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div>
