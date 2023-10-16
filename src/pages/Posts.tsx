@@ -1,5 +1,5 @@
 import Layout from '../layouts/Layout';
-import Posts from '../components/Posts/Posts';
+import Posts from '../components/Posts';
 
 const PostsPage = () => {
     return(

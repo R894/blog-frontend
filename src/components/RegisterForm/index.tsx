@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import api from "../../api/axios";
-import LoginForm from "../LoginForm/LoginForm";
+import LoginForm from "../LoginForm";
 
 const RegisterForm = () => {
     interface FormData{
