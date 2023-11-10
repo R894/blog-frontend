@@ -35,7 +35,7 @@ const LoginForm = () => {
     api
       .post(`/login`, formData)
       .then((res) => {
-        localStorage.setItem("accessToken", res.data.token);
+        localStorage.setItem("accessToken", res.data.message);
         setAuth(res.data);
         navigate("/");
       })

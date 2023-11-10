@@ -7,14 +7,16 @@ const RegisterForm = () => {
         username: string;
         password: string;
         confirmPassword: string;
-        email: string;
+        firstName: string;
+        lastName: string;
     }
 
     const [formData, setFormData] = useState<FormData>({
         username: '',
         password: '',
         confirmPassword: '',
-        email: '',
+        firstName: '',
+        lastName: '',
     });
     
     const [success, setSuccess] = useState(false);
@@ -29,7 +31,7 @@ const RegisterForm = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        api.post('/users', {username: formData.username, password: formData.password, email: formData.email})
+        api.post('/register', {username: formData.username, password: formData.password, firstName: formData.firstName, lastName: formData.lastName})
             .then((res) => {
                 console.log(res)
                 setSuccess(true);
@@ -78,11 +80,22 @@ const RegisterForm = () => {
                     </div>
                     <div>
                         <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Email"
-                            value={formData.email}
+                            type="firstName"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="lastName"
+                            id="lastName"
+                            name="lastName"
+                            placeholder="lastName"
+                            value={formData.lastName}
                             onChange={handleChange}
                             required
                         />

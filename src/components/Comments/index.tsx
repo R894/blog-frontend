@@ -8,14 +8,14 @@ const Comments = () => {
   const { id } = useParams();
 
   interface commentInterface {
-    user: {username: string};
+    userId: string;
     content: string;
   }
 
   useEffect(() => {
-    api.get(`/posts/${id}`).then((res) => {
+    api.get(`/comments/${id}`).then((res) => {
       setIsLoading(false);
-      setData(res.data.comments);
+      setData(res.data);
       console.log(res.data);
     });
   }, [id]);
@@ -26,7 +26,7 @@ const Comments = () => {
     }
     return commentData.map((comment, index: number) => (
       <div key={index} className="p-6 w-64 bg-white border border-gray-200 rounded-lg shadow mt-4">
-        <p id="user" className="text-gray-600 text-sm mb-4">{comment.user.username}</p>
+        <p id="user" className="text-gray-600 text-sm mb-4">{comment.userId}</p>
         <p id="comment">{comment.content}</p>
       </div>
     ));
