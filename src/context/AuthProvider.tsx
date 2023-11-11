@@ -1,10 +1,10 @@
-import { createContext,ReactNode, useState } from "react";
+import { createContext,ReactNode, useState, useEffect } from "react";
 
 interface AuthContextType{
     auth: {
         token?:string;
     };
-    setAuth: (auth: { token?: string }) => void;
+    setAuth: (auth: { token?: string  }) => void;
 }
 
 const defaultAuthContext: AuthContextType = {
@@ -19,8 +19,19 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-    const [auth, setAuth] = useState<object>({});
+    const [auth, setAuth] = useState<{ token?: string }>(() => {
+        const storedToken = localStorage.getItem("authToken");
+        return { token: storedToken || undefined };
+    });
 
+    useEffect(() => {
+        if (auth.token) {
+            localStorage.setItem("authToken", auth.token);
+        } else {
+            localStorage.removeItem("authToken");
+        }
+    }, [auth]);
+    
     return(
         <AuthContext.Provider value={{auth, setAuth}}>
             {children}

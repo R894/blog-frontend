@@ -10,13 +10,11 @@ const RequireAuth = ({ children }: RequireAuthProps) => {
     const { auth } = useAuth();
     const location = useLocation();
 
-    return (
-        auth?.token? 
-            (
-                children
-            )
-            :<Navigate to="/login" state={{from: location}} replace /> 
-    );
+    if (auth.token) {
+        return children;
+    } else {
+        return <Navigate to="/login" state={{ from: location }} replace />;
+    }
 }
 
 export default RequireAuth;
