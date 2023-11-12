@@ -1,49 +1,14 @@
-import { Link } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
-import Logout from "../Logout";
+import Hero from "../Hero"
+import Navbar from "../Navbar"
 
 const Header = () => {
-  const { auth } = useAuth();
+    return(
+        <div className="mx-20 p-5 flex flex-col gap-14">
+            <Navbar/>
+            <Hero title="THE BLOG"/>
+        </div>
+        
+    )
+}
 
-  const renderLinks = () => {
-    if (!auth.token) {
-      return (
-        <>
-          <li className="flex list-none gap-3">
-            <ul className="text-center">
-              <Link to="/login">Login</Link>
-            </ul>
-            <ul className="text-center">
-              <Link to="/register">Register</Link>
-            </ul>
-          </li>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <li className="flex list-none gap-3">
-            <ul className="text-center">
-              <Link to="/posts">Posts</Link>
-            </ul>
-            <ul className="text-center">
-              <Link to="/posts/new">Create Post</Link>
-            </ul>
-            <ul className="text-center">
-              <Logout />
-            </ul>
-          </li>
-        </>
-      );
-    }
-  };
-
-  return (
-    <div className="flex p-2 gap-3 justify-between mx-3">
-      <h1 className="text-2xl"><Link to="/">Blog</Link></h1>
-      {renderLinks()}
-    </div>
-  );
-};
-
-export default Header;
+export default Header
