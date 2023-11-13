@@ -2,11 +2,13 @@
 const Footer = () => {
   return (
     <>
-      <div className="flex justify-center">
-        <a href="https://github.com/R894" className="flex gap-1 py-2">
-          <p>R894</p>
-          <img src="/icons/github.png" style={{width: '25px', height: 'auto'}}/>
-        </a>
+      <div className="py-7 text-xl">
+        <ul className="flex gap-3">
+          <li>© 2023</li>
+          <li><a href="https://www.linkedin.com/in/kamil-khalaileh/">LinkedIn</a></li>
+          <li><a href="https://github.com/R894">Github</a></li>
+          <li>Email</li>
+        </ul>
       </div>
     </>
   );

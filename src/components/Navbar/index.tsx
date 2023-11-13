@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Logout from "../Logout";
 
-const Navbar = () => {
+interface NavbarProps {
+  title: string;
+}
+
+const Navbar = ({title}: NavbarProps) => {
   const { auth } = useAuth();
+
+  
 
   const renderLinks = () => {
     if (!auth.token) {
       return (
         <>
-          <li className="flex list-none gap-3">
+          <li className="flex list-none gap-3 text-xl">
             <ul className="text-center">
               <Link to="/login">Login</Link>
             </ul>
@@ -22,7 +28,7 @@ const Navbar = () => {
     } else {
       return (
         <>
-          <li className="flex list-none gap-3">
+          <li className="flex list-none gap-3 text-xl">
             <ul className="text-center">
               <Link to="/posts">Posts</Link>
             </ul>
@@ -39,8 +45,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex p-2 gap-3 justify-between mx-3">
-      <h1 className="text-2xl"><Link to="/">Blog</Link></h1>
+    <div className="flex gap-3 justify-between">
+      <h1 className="text-2xl font-semibold"><Link to="/">{title}</Link></h1>
       {renderLinks()}
     </div>
   );

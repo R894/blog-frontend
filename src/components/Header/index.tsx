@@ -3,8 +3,8 @@ import Navbar from "../Navbar"
 
 const Header = () => {
     return(
-        <div className="mx-20 p-5 flex flex-col gap-14">
-            <Navbar/>
+        <div className="py-5 flex flex-col gap-14">
+            <Navbar title="Blog"/>
             <Hero title="THE BLOG"/>
         </div>
         
