@@ -17,6 +17,12 @@ const Navbar = ({title}: NavbarProps) => {
         <>
           <li className="flex list-none gap-3 text-xl">
             <ul className="text-center">
+              <Link to="/posts">Blog</Link>
+            </ul>
+            <ul className="text-center">
+              <Link to="/login">About</Link>
+            </ul>
+            <ul className="text-center">
               <Link to="/login">Login</Link>
             </ul>
             <ul className="text-center">
@@ -30,10 +36,13 @@ const Navbar = ({title}: NavbarProps) => {
         <>
           <li className="flex list-none gap-3 text-xl">
             <ul className="text-center">
-              <Link to="/posts">Posts</Link>
+              <Link to="/posts">Blog</Link>
             </ul>
             <ul className="text-center">
-              <Link to="/posts/new">Create Post</Link>
+              <Link to="/login">About</Link>
+            </ul>
+            <ul className="text-center">
+              <Link to="/posts/new">New Post</Link>
             </ul>
             <ul className="text-center">
               <Logout />

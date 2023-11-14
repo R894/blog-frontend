@@ -21,7 +21,7 @@ const GetPost = () => {
   });
 
   useEffect(() => {
-    api.get(`/posts/${id}`).then((res) => {
+    api.get(`/posts/view/${id}`).then((res) => {
       console.log(res.data);
       setData(res.data);
       setIsLoading(false);

@@ -13,7 +13,7 @@ const Comments = () => {
   }
 
   useEffect(() => {
-    api.get(`/comments/${id}`).then((res) => {
+    api.get(`/comments/post/${id}`).then((res) => {
       setIsLoading(false);
       setData(res.data);
       console.log(res.data);

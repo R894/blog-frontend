@@ -20,8 +20,7 @@ const Posts = () => {
     axios
       .get(`${url}/posts`)
       .then((res) => {
-        setData(res.data);
-        console.log(res.data);
+        setData(res.data.posts);
         setIsLoading(false);
       })
       .catch((error) => {

@@ -20,7 +20,7 @@ const CreateComment = () => {
     e.preventDefault();
     api
       .post(
-        `/comments/${id}`,
+        `/comments/post/${id}`,
         { content: formData.content },
         { headers: { Authorization: `Bearer ${auth.token}` } }
       )
