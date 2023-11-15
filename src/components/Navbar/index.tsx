@@ -20,7 +20,7 @@ const Navbar = ({title}: NavbarProps) => {
               <Link to="/posts">Blog</Link>
             </ul>
             <ul className="text-center">
-              <Link to="/login">About</Link>
+              <Link to="/about">About</Link>
             </ul>
             <ul className="text-center">
               <Link to="/login">Login</Link>
@@ -39,7 +39,7 @@ const Navbar = ({title}: NavbarProps) => {
               <Link to="/posts">Blog</Link>
             </ul>
             <ul className="text-center">
-              <Link to="/login">About</Link>
+              <Link to="/about">About</Link>
             </ul>
             <ul className="text-center">
               <Link to="/posts/new">New Post</Link>

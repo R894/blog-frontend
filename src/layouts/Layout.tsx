@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({children}) => {
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col w-5/6">
             <Header/>
             <div className='flex flex-col flex-grow gap-3'>
                 {children}

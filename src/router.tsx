@@ -6,6 +6,7 @@ import RegisterPage from "./pages/Register";
 import RequireAuth from "./components/RequireAuth";
 import CreatePostPage from "./pages/CreatePost";
 import GetPostsPage from "./pages/Post";
+import AboutPage from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/posts/:id",
     element: <GetPostsPage/>,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
   {
     path: "/login",
