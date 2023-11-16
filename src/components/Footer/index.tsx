@@ -7,7 +7,9 @@ const Footer = () => {
           <li>© 2023</li>
           <li><a href="https://www.linkedin.com/in/kamil-khalaileh/">LinkedIn</a></li>
           <li><a href="https://github.com/R894">Github</a></li>
-          <li>Email</li>
+          <li><a href="">Email</a></li>
+          <li><a href="">RSS Feed</a></li>
+          <li><a href="">Add to Feedly</a></li>
         </ul>
       </div>
     </>

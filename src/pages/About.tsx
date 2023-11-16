@@ -1,13 +1,14 @@
 import Hero from "../components/Hero"
 import Layout from "../layouts/Layout"
+import AboutImage from "../assets/images/about.png"
 
 const AboutPage = () => {
     return(
         <Layout>
             <Hero title="John Doe"/>
+            <img src={AboutImage} alt="" />
             <h2 className="text-2xl font-bold">About Me</h2>
             <p>As a passionate and experienced UI designer, I am dedicated to creating intuitive and engaging user experiences that meet the needs of my clients and their users. I have a strong understanding of design principles and a proficiency in design tools, and I am comfortable working with cross-functional teams to bring projects to fruition. I am confident in my ability to create designs that are both visually appealing and functional, and I am always looking for new challenges and opportunities to grow as a designer.</p>
-                
             <h2 className="text-2xl font-bold">Skills:</h2>
                 <ul className="list-disc ml-8">
                     <li>Extensive experience in UI design, with a strong portfolio of completed projects</li>

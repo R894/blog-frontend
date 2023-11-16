@@ -16,9 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/posts",
     element: (
-      <RequireAuth>
         <PostsPage />
-      </RequireAuth>
     ),
   },
   {
