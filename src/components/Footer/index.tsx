@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <>
       <div className="py-7 text-xl">
-        <ul className="flex gap-3">
+        <ul className="flex flex-col md:flex-row gap-3">
           <li>© 2023</li>
           <li><a href="https://www.linkedin.com/in/kamil-khalaileh/">LinkedIn</a></li>
           <li><a href="https://github.com/R894">Github</a></li>
