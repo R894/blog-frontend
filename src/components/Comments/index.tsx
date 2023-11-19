@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../../api/axios";
 import { useParams } from "react-router-dom";
+import apiService from "../../api/axios";
 
 const Comments = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,11 +13,16 @@ const Comments = () => {
   }
 
   useEffect(() => {
-    api.get(`/comments/post/${id}`).then((res) => {
-      setIsLoading(false);
-      setData(res.data);
-      console.log(res.data);
-    });
+    apiService.getComments(Number(id))
+      .then((res) => {
+        setIsLoading(false);
+        setData(res);
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error("Error fetching comments:", error);
+        setIsLoading(false);
+      });
   }, [id]);
 
   const mapComments = (commentData: commentInterface[]) => {

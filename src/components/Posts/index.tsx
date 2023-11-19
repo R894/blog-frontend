@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-
-const url = import.meta.env.VITE_API_URL;
+import apiService from "../../api/axios";
 
 interface Post {
   id: string;
@@ -17,10 +15,10 @@ const Posts = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`${url}/posts`)
+    apiService
+      .viewPosts()
       .then((res) => {
-        setData(res.data.posts);
+        setData(res.posts);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -29,11 +27,11 @@ const Posts = () => {
   }, []);
 
   const reduceString = (str: string, maxLength: number) => {
-    if(str.length <= maxLength){
+    if (str.length <= maxLength) {
       return str;
     }
     return str.substring(0, maxLength) + "...";
-  }
+  };
 
   return (
     <>
@@ -46,9 +44,15 @@ const Posts = () => {
             {data.map((item) => (
               <div key={item.id} className="w-80 xl:w-96 h-auto">
                 <div className="w-80 xl:w-96 h-60 bg-slate-500 mb-8"></div>
-                <p className="text-purple-800 text-sm font-semibold">{new Date(item.createdAt).toLocaleString()} • {item.userId}</p>
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900 mb-3 my-3"><Link to={`/posts/${item.id}`}>{item.title}</Link></h3>
-                <p className=" text-gray-500">{reduceString(item.content, 150)}</p>
+                <p className="text-purple-800 text-sm font-semibold">
+                  {new Date(item.createdAt).toLocaleString()} • {item.userId}
+                </p>
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900 mb-3 my-3">
+                  <Link to={`/posts/${item.id}`}>{item.title}</Link>
+                </h3>
+                <p className=" text-gray-500">
+                  {reduceString(item.content, 150)}
+                </p>
               </div>
             ))}
           </div>

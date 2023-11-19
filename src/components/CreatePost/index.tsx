@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import api from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import apiService from "../../api/axios";
 
 const CreatePost = () => {
   interface FormData {
@@ -36,12 +36,12 @@ const CreatePost = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    api
-      .post(
-        "/posts",
-        { title: formData.title, content: formData.content },
-        { headers: { Authorization: `Bearer ${auth.token}` } }
-      )
+    if (auth.token === undefined) {
+      return;
+    }
+
+    apiService
+      .createPost(formData.title, formData.content, auth.token)
       .then((res) => {
         console.log(res);
         setSuccess(true);
@@ -53,9 +53,9 @@ const CreatePost = () => {
 
   return (
     <>
-      {success ? 
+      {success ? (
         navigate("/posts")
-       : (
+      ) : (
         <div className="">
           <h2 className="text-2xl mb-4">Create new Post</h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
@@ -83,7 +83,9 @@ const CreatePost = () => {
               />
             </div>
             <div className="self-center">
-              <button className="btn-primary" type="submit">Create</button>
+              <button className="btn-primary" type="submit">
+                Create
+              </button>
             </div>
           </form>
         </div>
