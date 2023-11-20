@@ -1,5 +1,5 @@
 import Layout from "../layouts/Layout";
-import CreatePost from "../components/CreatePost";
+import CreatePost from "../features/Posts/CreatePost";
 
 const CreatePostPage = () => {
     return(

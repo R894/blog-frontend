@@ -3,7 +3,7 @@ import HomePage from "./pages/Home";
 import PostsPage from "./pages/Posts";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
-import RequireAuth from "./components/RequireAuth";
+import RequireAuth from "./features/Authentication/RequireAuth";
 import CreatePostPage from "./pages/CreatePost";
 import GetPostsPage from "./pages/Post";
 import AboutPage from "./pages/About";

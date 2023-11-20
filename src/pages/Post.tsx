@@ -1,7 +1,7 @@
 import Layout from '../layouts/Layout';
-import GetPost from '../components/GetPost';
-import Comments from '../components/Comments';
-import CreateComment from '../components/CreateComment';
+import GetPost from '../features/Posts/GetPost';
+import Comments from '../features/Comments';
+import CreateComment from '../features/Comments/CreateComment';
 
 const GetPostsPage = () => {
     return(

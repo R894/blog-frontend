@@ -1,6 +1,6 @@
 
 import Hero from '../components/Hero';
-import Posts from '../components/Posts';
+import Posts from '../features/Posts';
 import Layout from '../layouts/Layout';
 
 

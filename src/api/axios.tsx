@@ -52,9 +52,9 @@ const apiService = {
       });
   },
 
-  viewPosts: async () => {
+  viewPosts: async (page?:number) => {
     return api
-    .get(`/posts`)
+    .get(page?`/posts/page/${page}`:`/posts`)
     .then((res) => {
         return res.data
     }).catch((err) => {

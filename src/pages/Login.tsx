@@ -1,4 +1,4 @@
-import LoginForm from '../components/LoginForm';
+import LoginForm from '../features/Authentication/LoginForm';
 import Layout from '../layouts/Layout';
 
 const LoginPage = () => {
