@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Logout from "../../features/Authentication/Logout";
-import DarkModeBtn from "../../assets/icons/darkmode-btn.png"
+import Logo from "../../assets/icons/logo.png"
 
-interface NavbarProps {
-  title: string;
-}
-
-const Navbar = ({title}: NavbarProps) => {
+const Navbar = () => {
   const { auth } = useAuth();
 
   
@@ -23,13 +19,9 @@ const Navbar = ({title}: NavbarProps) => {
             <ul className="flex flex-col justify-center">
               <Link to="/about">About</Link>
             </ul>
-            <ul className="flex flex-col justify-center">
+            <ul className="flex flex-col justify-center border-2 px-3 rounded-lg border-black">
               <Link to="/login">Login</Link>
             </ul>
-            <ul className="flex flex-col justify-center">
-              <Link to="/register">Register</Link>
-            </ul>
-            <img src={DarkModeBtn} className="w-auto h-10" alt="" />
           </li>
         </>
       );
@@ -57,7 +49,8 @@ const Navbar = ({title}: NavbarProps) => {
 
   return (
     <div className="flex gap-3 justify-between">
-      <h1 className="text-2xl font-semibold"><Link to="/">{title}</Link></h1>
+      
+      <Link to="/"><img src={Logo} alt="" className="h-14"/></Link>
       {renderLinks()}
     </div>
   );
