@@ -74,5 +74,10 @@ const apiService = {
         throw err;
       });
   },
+
+  login: async(username:string, password:string) => {
+    return api
+      .post(`/login`, {username, password})
+  },
 };
 export default apiService;
