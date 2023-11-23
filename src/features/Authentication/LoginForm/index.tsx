@@ -33,17 +33,18 @@ const LoginForm = () => {
     setIsLoading(true);
 
     apiService.login(formData.username, formData.password)
-      .then((res) => {
-        localStorage.setItem("accessToken", res.data.message);
-        setAuth(res.data);
-        navigate("/");
-      })
-      .catch((err) => {
-        console.error(err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+  .then((res) => {
+    console.log(res.data.message)
+    localStorage.setItem("accessToken", res.data.message);
+    setAuth({ token: res.data.message || undefined });
+    navigate("/");
+  })
+  .catch((err) => {
+    console.error(err);
+  })
+  .finally(() => {
+    setIsLoading(false);
+  });
   };
 
   return (

@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Logout from "../../features/Authentication/Logout";
 import Logo from "../../assets/icons/logo.png";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const { auth } = useAuth();
+  const [authenticated, setAuthenticated] = useState(!!auth.token);
+  useEffect(() => {
+    console.log("Auth state changed:", auth.token);
+    setAuthenticated(!!auth.token);
+  }, [auth.token]);
 
   const renderLinks = () => {
-    if (!auth.token) {
+    if (!authenticated) {
       return (
         <>
           <li className="flex justify-center items-center list-none gap-3 text-xl py-1 font-main">
