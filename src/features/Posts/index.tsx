@@ -22,7 +22,7 @@ const Posts = () => {
       .viewPosts(page)
       .then((res) => {
         setData(res.posts);
-        setMaxPage(res.totalPages)
+        setMaxPage(res.totalPages);
         console.log(res);
         setIsLoading(false);
       })
@@ -37,17 +37,25 @@ const Posts = () => {
         <p className="text-2xl mb-8 font-bold">Loading...</p>
       ) : (
         <>
-        <div className="border-b-2">
-          <p className="text-2xl mb-8 font-bold">All blog posts</p>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-7">
-              {data.map((item) => (
-                <PostContainer {...item} key={item.id} />
-              ))}
+          <div className="border-b-2">
+            <div className="mb-8 w-full flex items-center gap-1">
+              <div className="text-md font-bold">Stories</div>
+              <div className="w-1/6 border-b-2 flex-shrink-0 border-black"></div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-7">
+                {data.map((item) => (
+                  <PostContainer {...item} key={item.id} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <Pagination currentPage={page} onPageChange={setPage} maxPage={Number(maxPage)}/>
+          <Pagination
+            currentPage={page}
+            onPageChange={setPage}
+            maxPage={Number(maxPage)}
+          />
         </>
       )}
     </>

@@ -49,7 +49,7 @@ const LoginForm = () => {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col gap-3 text-center w-80">
-        <h1 className="text-3xl">Welcome back!</h1>
+        <h1 className="text-3xl font-main font-bold">Welcome back!</h1>
         <p>Sign in to get the most out of Nuntium</p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-center">
           <div>
@@ -57,7 +57,7 @@ const LoginForm = () => {
               type="text"
               id="username"
               name="username"
-              className="w-full h-14 p-3 rounded-lg"
+              className="w-full h-14 p-3 rounded-lg bg-gray-100"
               placeholder="Username"
               value={formData.username}
               onChange={handleChange}
@@ -69,7 +69,7 @@ const LoginForm = () => {
               type="password"
               id="password"
               name="password"
-              className="w-full h-14 p-3 rounded-lg"
+              className="w-full h-14 p-3 rounded-lg bg-gray-100"
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
@@ -77,7 +77,7 @@ const LoginForm = () => {
             />
           </div>
           <div>
-            <button type="submit" className="w-full h-14 border-2 rounded-lg border-black">
+            <button type="submit" className="w-full text-xl font-main btn-primary">
               {isLoading ? "Logging in..." : "Login"}
             </button>
           </div>

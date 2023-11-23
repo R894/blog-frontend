@@ -1,26 +1,20 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Logout from "../../features/Authentication/Logout";
-import Logo from "../../assets/icons/logo.png"
+import Logo from "../../assets/icons/logo.png";
 
 const Navbar = () => {
   const { auth } = useAuth();
-
-  
 
   const renderLinks = () => {
     if (!auth.token) {
       return (
         <>
-          <li className="flex justify-center align-middle list-none gap-3 text-xl">
-            <ul className="flex flex-col justify-center">
-              <Link to="/posts">Blog</Link>
-            </ul>
-            <ul className="flex flex-col justify-center">
-              <Link to="/about">About</Link>
-            </ul>
-            <ul className="flex flex-col justify-center border-2 px-3 rounded-lg border-black">
-              <Link to="/login">Login</Link>
+          <li className="flex justify-center items-center list-none gap-3 text-xl py-1 font-main">
+            <ul className="flex flex-col justify-center items-center">
+              <Link to="/login">
+                <button className="btn-primary w-32">Login</button>
+              </Link>
             </ul>
           </li>
         </>
@@ -28,17 +22,11 @@ const Navbar = () => {
     } else {
       return (
         <>
-          <li className="flex list-none gap-3 text-xl">
-            <ul className="text-center">
-              <Link to="/posts">Blog</Link>
-            </ul>
-            <ul className="text-center">
-              <Link to="/about">About</Link>
-            </ul>
-            <ul className="text-center">
+          <li className="flex justify-center align-middle list-none gap-3 text-xl py-1 font-main">
+            <ul className="flex flex-col justify-center">
               <Link to="/posts/new">New Post</Link>
             </ul>
-            <ul className="text-center">
+            <ul className="flex flex-col justify-center">
               <Logout />
             </ul>
           </li>
@@ -49,8 +37,21 @@ const Navbar = () => {
 
   return (
     <div className="flex gap-3 justify-between">
-      
-      <Link to="/"><img src={Logo} alt="" className="h-14"/></Link>
+      <div className="flex">
+        <li className="flex justify-center align-middle list-none gap-8 text-xl py-1 font-main">
+          <ul>
+            <Link to="/">
+              <img src={Logo} alt="" className="h-14" />
+            </Link>
+          </ul>
+          <ul className="flex flex-col justify-center">
+            <Link to="/">Home</Link>
+          </ul>
+          <ul className="flex flex-col justify-center">
+            <Link to="/about">About</Link>
+          </ul>
+        </li>
+      </div>
       {renderLinks()}
     </div>
   );

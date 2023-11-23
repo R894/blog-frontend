@@ -1,4 +1,3 @@
-import Hero from "../components/Hero"
 import Layout from "../layouts/Layout"
 import AboutImage from "../assets/images/about.png"
 import Section from "../components/Section"
@@ -6,8 +5,6 @@ import Section from "../components/Section"
 const AboutPage = () => {
     return(
         <Layout>
-            
-            <Hero title="John Doe"/>
             <div className="pt-7 pb-7 flex flex-col gap-8">
                 <img src={AboutImage} alt="Image of the subject" />
 

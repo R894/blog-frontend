@@ -1,12 +1,20 @@
+import { Link } from "react-router-dom";
 
-interface HeroProps {
-    title: string;
-}
+const Hero = () => {
+  return (
+    <div className="flex px-28 pt-28 pb-12 gap-2 justify-between items-center">
+      <div className="flex flex-col items-start justify-start gap-1">
+        <p className="text-4xl max-w-xl font-main font-bold">
+          We tell the news that makes the most impact.
+        </p>
+        <div className="max-w-sm">
+          Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor nisi
+          qui dolor cillum fugiat ad.
+        </div>
+      </div>
+      <Link to="/about" className="btn-primary h-14 flex justify-center items-center bg-gray-950 text-white">Learn more</Link>
+    </div>
+  );
+};
 
-const Hero = ({title}: HeroProps) => {
-    return(
-        <div className="font-bold text-6xl md:text-9xl xl:text-[256px] border-y-2 text-center px-1">{title}</div>
-    )
-}
-
-export default Hero
+export default Hero;

@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
+    fontFamily:{
+      'main':['"Libre Baskerville"', 'serif'],
+      'body':['"Open Sans"', 'sans-serif']
+    }
   },
   plugins: [],
 }
