@@ -12,7 +12,7 @@ const Hero = () => {
           qui dolor cillum fugiat ad.
         </div>
       </div>
-      <Link to="/about" className="btn-primary h-14 flex justify-center items-center bg-gray-950 text-white">Learn more</Link>
+      <Link to="/about" className="px-4 rounded-lg h-14 flex justify-center items-center bg-gray-950 text-white">Learn more</Link>
     </div>
   );
 };
