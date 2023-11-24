@@ -1,47 +1,99 @@
-import Layout from "../layouts/Layout"
-import AboutImage from "../assets/images/about.png"
-import Section from "../components/Section"
+import Section from "../components/Section";
+import AboutLayout from "../layouts/AboutLayout";
+import Angel from "../assets/images/angel.png";
+import Man from "../assets/images/man.png";
+import Logo from "../assets/icons/logo.png";
+import Cat from "../assets/images/cat.png";
+import Boy from "../assets/images/boy.png";
+import Face from "../assets/images/face.png";
+import SectionXl from "../components/SectionXl";
 
 const AboutPage = () => {
-    return(
-        <Layout>
-            <div className="pt-7 pb-7 flex flex-col gap-8">
-                <img src={AboutImage} alt="Image of the subject" />
+  return (
+    <AboutLayout>
+      <div className="flex flex-col justify-center items-center gap-8 h-96">
+        <img className="max-w-2xl" src={Logo} />
+        <p className="font-main text-xl">
+          A publishing company that focuses on the essentials.
+        </p>
+      </div>
 
-                <Section title="About Me">
-                    <p>As a passionate and experienced UI designer, I am dedicated to creating intuitive and engaging user experiences that meet the needs of my clients and their users. I have a strong understanding of design principles and a proficiency in design tools, and I am comfortable working with cross-functional teams to bring projects to fruition. I am confident in my ability to create designs that are both visually appealing and functional, and I am always looking for new challenges and opportunities to grow as a designer.</p>
-                </Section>
-
-                <Section title="Skills:">
-                    <ul className="list-disc ml-8">
-                        <li>Extensive experience in UI design, with a strong portfolio of completed projects</li>
-                        <li>Proficiency in design tools such as Adobe Creative Suite and Sketch</li>
-                        <li>Excellent visual design skills, with a strong understanding of layout, color theory, and typography</li>
-                        <li>Ability to create wireframes and prototypes to communicate design concepts</li>
-                        <li>Strong communication and collaboration skills, with the ability to work effectively with cross-functional teams</li>
-                        <li>Experience conducting user research and gathering insights to inform design decisions</li>
-                        <li>Proficiency in HTML, CSS, and JavaScript</li>
-                    </ul>
-                </Section>
-                
-                <Section title="Experience:">
-                    <ul className="list-disc ml-8">
-                        <li>5 years of experience as a UI designer, working on a variety of projects for clients in the tech and retail industries</li>
-                        <li>Led the design of a successful e-commerce website, resulting in a 25% increase in online sales</li>
-                        <li>Created wireframes and prototypes for a mobile banking app, leading to a 20% increase in app usage</li>
-                        <li>Conducted user research and usability testing to inform the redesign of a healthcare provider's website, resulting in a 15% increase in website traffic</li>
-                    </ul>
-                </Section>
-
-                <Section title="Education:">
-                    <ul className="list-disc ml-8">
-                        <li>Bachelor's degree in Graphic Design</li>
-                        <li>Certified User Experience Designer (CUED)</li>
-                    </ul>
-                </Section>
+      <div className="bg-neutral-900 text-white w-full py-32 gap-14 flex flex-col justify-center items-center align-middle">
+        <div className="flex justify-center gap-14 w-full">
+          <Section title="We tell stories that drives the heart.">
+            <div>
+              <p>
+                Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor
+                nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit
+                culpa qui minim pariatur et officia elit id. Tempor cupidatat
+                veniam esse ad veniam dolore excepteur tempor dolor consectetur
+                ut id.
+              </p>
             </div>
-        </Layout>
-    )
-}
+          </Section>
+          <img className="max-w-2xl" src={Angel} />
+        </div>
 
-export default AboutPage
+        <div className="flex flex-col justify-center items-center gap-8">
+          <img className="max-w-2xl" src={Man} />
+          <Section title="We tell the news that makes the most impact.">
+            <div>
+              <p>
+                Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor
+                nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit
+                culpa qui minim pariatur et officia elit id. Tempor cupidatat
+                veniam esse ad veniam dolore excepteur tempor dolor consectetur
+                ut id.
+              </p>
+            </div>
+          </Section>
+        </div>
+
+        <div className="flex flex-col gap-16 justify-end">
+          <SectionXl title="We share the little moments that shows we're alive.">
+            <div>
+              <p>
+                Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor
+                nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit
+                culpa qui minim pariatur et officia elit id. Tempor cupidatat
+                veniam esse ad veniam dolore excepteur tempor dolor consectetur
+                ut id.
+              </p>
+            </div>
+          </SectionXl>
+          <div className="flex gap-4">
+            <img className="max-h-80" src={Cat} />
+            <img className="max-h-80" src={Boy} />
+            <img className="max-h-80" src={Face} />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex align-middle justify-center py-80">
+        <div className="flex flex-col max-w-md gap-8">
+          <h1 className="font-main text-4xl text-center">
+            Because we are you. Humans.
+          </h1>
+          <p className="text-center">
+            Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor nisi
+            qui..
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full bg-neutral-900 text-white">
+        <div className="flex justify-center align-middle py-40 ">
+          <div className="flex flex-col">
+            <h1 className="font-main text-4xl text-center">want to connect?</h1>
+            <p className="text-center">
+              Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor
+              nisi qui..
+            </p>
+          </div>
+        </div>
+      </div>
+    </AboutLayout>
+  );
+};
+
+export default AboutPage;
