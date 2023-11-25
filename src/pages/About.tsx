@@ -7,19 +7,22 @@ import Cat from "../assets/images/cat.png";
 import Boy from "../assets/images/boy.png";
 import Face from "../assets/images/face.png";
 import SectionXl from "../components/SectionXl";
+import Instagram from "../assets/icons/instagram.png"
+import Twitter from "../assets/icons/twitter.png"
+import Linkedin from "../assets/icons/linkedin.png"
 
 const AboutPage = () => {
   return (
     <AboutLayout>
       <div className="flex flex-col justify-center items-center gap-8 h-96">
-        <img className="max-w-2xl" src={Logo} />
+        <img className="max-w-2xl " src={Logo} />
         <p className="font-main text-xl">
           A publishing company that focuses on the essentials.
         </p>
       </div>
 
       <div className="bg-neutral-900 text-white w-full py-32 gap-14 flex flex-col justify-center items-center align-middle">
-        <div className="flex justify-center gap-14 w-full">
+        <div className="flex justify-center gap-14 w-full px-4">
           <Section title="We tell stories that drives the heart.">
             <div>
               <p>
@@ -31,7 +34,7 @@ const AboutPage = () => {
               </p>
             </div>
           </Section>
-          <img className="max-w-2xl" src={Angel} />
+          <img className="hidden lg:block max-w-2xl h-auto" src={Angel} />
         </div>
 
         <div className="flex flex-col justify-center items-center gap-8">
@@ -64,7 +67,7 @@ const AboutPage = () => {
           <div className="flex gap-4">
             <img className="max-h-80" src={Cat} />
             <img className="max-h-80" src={Boy} />
-            <img className="max-h-80" src={Face} />
+            <img className="max-h-80 hidden lg:block" src={Face} />
           </div>
         </div>
       </div>
@@ -82,13 +85,18 @@ const AboutPage = () => {
       </div>
 
       <div className="w-full bg-neutral-900 text-white">
-        <div className="flex justify-center align-middle py-40 ">
-          <div className="flex flex-col">
+        <div className="flex justify-center align-middle py-40">
+          <div className="flex flex-col gap-4 max-w-xs">
             <h1 className="font-main text-4xl text-center">want to connect?</h1>
             <p className="text-center">
               Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor
               nisi qui..
             </p>
+            <div className="flex justify-center gap-4">
+              <img className="h-8 w-auto" src={Twitter} />
+              <img className="h-8 w-auto" src={Instagram}/>
+              <img className="h-8 w-auto" src={Linkedin}/>
+            </div>
           </div>
         </div>
       </div>

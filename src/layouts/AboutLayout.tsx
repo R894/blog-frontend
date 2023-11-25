@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const AboutLayout: React.FC<LayoutProps> = ({children}) => {
     return(
-        <div className="flex flex-col w-full pl-5 pr-5">
+        <div className="flex flex-col w-full pl-5 pr-5 max-w-[1920px]">
             <Header/>
             <div className='flex flex-col items-center flex-grow gap-3'>
                 {children}
