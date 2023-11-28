@@ -9,6 +9,7 @@ interface Post {
   content: string;
   createdAt: string;
   userId: string;
+  imagePath: string;
 }
 
 const Posts = () => {

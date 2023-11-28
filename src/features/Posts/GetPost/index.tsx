@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import apiService from "../../../api/axios";
+import Comments from "../../Comments";
+import CreateComment from "../../Comments/CreateComment";
 
 interface DataProps {
   id: string;
@@ -8,6 +10,7 @@ interface DataProps {
   createdAt: string;
   content: string;
   userId: number;
+  imagePath: string;
 }
 
 const GetPost = () => {
@@ -18,6 +21,7 @@ const GetPost = () => {
     title: "",
     createdAt: "",
     content: "",
+    imagePath: "",
     userId: 0,
   });
 
@@ -34,12 +38,15 @@ const GetPost = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div className="bg-white shadow-md rounded-lg p-8 h-64 min-w-[256px] w-3/4">
-          <h3 className="text-3xl font-bold mb-4">{data.title}</h3>
-          <p className="text-gray-600 text-sm">
+        <div className="flex flex-col w-1/2 justify-center items-center">
+          {data.imagePath != 'none'? <img src={`http://localhost:4000/static/${data.imagePath}`}/> : null }
+          <h3 className="text-3xl font-bold mb-4 font-main text-center">{data.title}</h3>
+          <p className="text-gray-600 text-sm text-center">
             {new Date(data.createdAt).toLocaleString()} by {data.userId}
           </p>
           <p className="mt-4">{data.content}</p>
+          <Comments/>
+          <CreateComment/>
         </div>
       )}
     </>

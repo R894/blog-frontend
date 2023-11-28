@@ -5,6 +5,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: FC<SearchBarProps> = ({ placeholder }) => {
+
   return (
     <>
       <div className="flex w-full">

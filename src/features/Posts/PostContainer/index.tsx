@@ -5,13 +5,15 @@ interface PostProps {
   title: string;
   content: string;
   createdAt: string;
+  imagePath: string;
   userId: string;
 }
 
 const PostContainer = (PostProps: PostProps) => {
   return (
     <div key={PostProps.id} className="w-80 2xl:w-96 h-auto">
-      <div className="w-80 2xl:w-96 h-60 bg-slate-500 mb-8"></div>
+      {PostProps.imagePath !==  'none' ? <img src={`http://localhost:4000/static/${PostProps.imagePath}`}/>: <div className="w-80 2xl:w-96 h-60 bg-neutral-800 mb-8"></div>}
+      
       <h3 className="text-2xl tracking-tight text-gray-900 mb-3 my-3 font-main font-bold">
         <Link to={`/posts/${PostProps.id}`}>{PostProps.title}</Link>
       </h3>

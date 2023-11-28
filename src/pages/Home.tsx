@@ -8,7 +8,7 @@ const HomePage = () => {
     return(
         <>
             <Layout>
-                <Hero title="THE BLOG"/>
+                <Hero/>
                 <Posts/>
             </Layout>
         </>

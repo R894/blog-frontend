@@ -1,16 +1,13 @@
-import Layout from '../layouts/Layout';
+
 import GetPost from '../features/Posts/GetPost';
-import Comments from '../features/Comments';
-import CreateComment from '../features/Comments/CreateComment';
+import LayoutCenter from '../layouts/LayoutCenter';
 
 const GetPostsPage = () => {
     return(
         <>
-            <Layout>
+            <LayoutCenter>
                 <GetPost/>
-                <Comments/>
-                <CreateComment/>
-            </Layout>
+            </LayoutCenter>
         </>
     );
 }

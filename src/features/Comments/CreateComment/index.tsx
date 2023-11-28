@@ -35,7 +35,7 @@ const CreateComment = () => {
 
   return (
     <div className="">
-      <h2 className="text-2xl mb-4">Create new Comment</h2>
+      <h2 className="text-2xl py-4">Create new Comment</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <div>
           <textarea

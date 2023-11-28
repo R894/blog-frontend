@@ -2,6 +2,7 @@ import { useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import apiService from "../../../api/axios";
+import Input from "../../../components/UI/Input";
 
 const LoginForm = () => {
   const { setAuth } = useAuth();
@@ -54,27 +55,23 @@ const LoginForm = () => {
         <p>Sign in to get the most out of Nuntium</p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-center">
           <div>
-            <input
+            <Input
               type="text"
               id="username"
               name="username"
-              className="w-full h-14 p-3 rounded-lg bg-gray-100"
               placeholder="Username"
               value={formData.username}
               onChange={handleChange}
-              required
             />
           </div>
           <div>
-            <input
+            <Input
               type="password"
               id="password"
               name="password"
-              className="w-full h-14 p-3 rounded-lg bg-gray-100"
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              required
             />
           </div>
           <div>

@@ -9,7 +9,7 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   onPageChange,
-  maxPage
+  maxPage,
 }) => {
   const handleButtonPress = (pageNum: number) => {
     onPageChange(pageNum);
@@ -47,7 +47,13 @@ const Pagination: React.FC<PaginationProps> = ({
         {currentPage <= maxPage - 1 && renderPageButton(currentPage + 1)}
         {currentPage === 1 && maxPage >= 3 && renderPageButton(currentPage + 2)}
       </div>
-      <button onClick={() => handleButtonPress(currentPage + 1)} disabled={currentPage >= maxPage}>Next</button>
+      
+      <button
+        onClick={() => handleButtonPress(currentPage + 1)}
+        disabled={currentPage >= maxPage}
+      >
+        Next
+      </button>
     </div>
   );
 };

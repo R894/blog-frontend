@@ -2,6 +2,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import apiService from "../../../api/axios";
+import UploadFile from "../../UploadFile";
 
 const CreatePost = () => {
   interface FormData {
@@ -14,9 +15,14 @@ const CreatePost = () => {
     content: "",
   });
 
+  const [uploadResponse, setUploadResponse] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const { auth } = useAuth();
   const navigate = useNavigate();
+
+  const handleUploadSuccess = (responseMessage: string) => {
+    setUploadResponse(responseMessage);
+  };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -41,7 +47,7 @@ const CreatePost = () => {
     }
 
     apiService
-      .createPost(formData.title, formData.content, auth.token)
+      .createPost(formData.title, formData.content, uploadResponse || "none", auth.token)
       .then((res) => {
         console.log(res);
         setSuccess(true);
@@ -71,6 +77,8 @@ const CreatePost = () => {
                 required
               />
             </div>
+            <UploadFile onUploadSuccess={handleUploadSuccess}/>
+            {uploadResponse && <p>Upload Response: {uploadResponse}</p>}
             <div>
               <textarea
                 id="content"

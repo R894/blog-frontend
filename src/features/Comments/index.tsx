@@ -30,7 +30,7 @@ const Comments = () => {
       return <p>No comments</p>;
     }
     return commentData.map((comment, index: number) => (
-      <div key={index} className="p-6 w-64 bg-white border border-gray-200 rounded-lg shadow mt-4">
+      <div key={index} className="p-6 w-64 bg-white border border-gray-200 rounded-lg mt-4">
         <p id="user" className="text-gray-600 text-sm mb-4">{comment.userId}</p>
         <p id="comment">{comment.content}</p>
       </div>
@@ -38,7 +38,8 @@ const Comments = () => {
   };
 
   return <>{isLoading ? <p>Loading...</p> : 
-  <div className="flex flex-col">
+  <div className="flex flex-col w-full">
+    <p className="font-main text-2xl pt-4">Comments</p>
     {mapComments(data)}
   </div>
   }</>;

@@ -47,7 +47,7 @@ const Navbar = () => {
         <li className="flex justify-center align-middle list-none gap-8 text-xl py-1 font-main">
           <ul>
             <Link to="/">
-              <img src={Logo} alt="" className="h-14" />
+              <img src={Logo} alt="" className="h-14 w-44" />
             </Link>
           </ul>
           <ul className="flex flex-col justify-center">

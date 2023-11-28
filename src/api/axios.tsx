@@ -34,11 +34,11 @@ const apiService = {
       });
   },
 
-  createPost: async (title: string, content: string, token: string) => {
+  createPost: async (title: string, content: string, filePath: string, token: string) => {
     return api
       .post(
         `/posts`,
-        { title: title, content: content },
+        { title: title, content: content, filePath: filePath },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -52,15 +52,16 @@ const apiService = {
       });
   },
 
-  viewPosts: async (page?:number) => {
+  viewPosts: async (page?: number) => {
     return api
-    .get(page?`/posts/page/${page}`:`/posts`)
-    .then((res) => {
-        return res.data
-    }).catch((err) => {
-        console.error(err)
-        throw err
-    })
+      .get(page ? `/posts/page/${page}` : `/posts`)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.error(err);
+        throw err;
+      });
   },
 
   viewPost: async (postId: number) => {
@@ -75,9 +76,22 @@ const apiService = {
       });
   },
 
-  login: async(username:string, password:string) => {
+  login: async (username: string, password: string) => {
+    return api.post(`/login`, { username, password });
+  },
+
+  uploadFile: async (file: File) => {
+    const form = new FormData();
+    form.append('file', file)
     return api
-      .post(`/login`, {username, password})
+      .post(`/upload`, form)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.error(err);
+        throw err;
+      });
   },
 };
 export default apiService;
