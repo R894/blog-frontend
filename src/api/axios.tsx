@@ -80,6 +80,11 @@ const apiService = {
     return api.post(`/login`, { username, password });
   },
 
+  register: async(username: string, password: string, firstName:string, lastName:string) => {
+    return api.post('/register', {username, password, firstName, lastName})
+            
+  },
+
   uploadFile: async (file: File) => {
     const form = new FormData();
     form.append('file', file)

@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import api from "../../../api/axios";
 import LoginForm from "../LoginForm";
+import apiService from "../../../api/axios";
 
 const RegisterForm = () => {
     interface FormData{
@@ -31,7 +31,7 @@ const RegisterForm = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        api.post('/register', {username: formData.username, password: formData.password, firstName: formData.firstName, lastName: formData.lastName})
+        apiService.register(formData.username, formData.password, formData.firstName,formData.lastName)
             .then((res) => {
                 console.log(res)
                 setSuccess(true);
