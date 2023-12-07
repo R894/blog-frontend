@@ -1,12 +1,13 @@
 import RegisterForm from '../features/Authentication/RegisterForm';
-import Layout from '../layouts/Layout';
+import LayoutCenter from '../layouts/LayoutCenter';
 
 const LoginPage = () => {
     return(
         <>
-            <Layout>
+
+            <LayoutCenter>
                 <RegisterForm/>
-            </Layout>
+            </LayoutCenter>
         </>
     );
 }

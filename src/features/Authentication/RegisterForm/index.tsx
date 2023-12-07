@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import LoginForm from "../LoginForm";
 import apiService from "../../../api/axios";
+import Input from "../../../components/UI/Input";
 
 const RegisterForm = () => {
     interface FormData{
@@ -43,65 +44,60 @@ const RegisterForm = () => {
         <>
             {success ? <LoginForm/> : (
                 <div className="">
-                <h2>Register</h2>
-                <form onSubmit={handleSubmit}>
+                <h2 className="font-main font-bold text-3xl text-center pb-5">Register</h2>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                     <div>
-                        <input
+                        <Input
                             type="text"
                             id="username"
                             name="username"
                             placeholder="Username"
                             value={formData.username}
                             onChange={handleChange}
-                            required
                         />
                     </div>
                     <div>
-                        <input
+                    <Input
                             type="password"
                             id="password"
                             name="password"
                             placeholder="Password"
                             value={formData.password}
                             onChange={handleChange}
-                            required
                         />
                     </div>
                     <div>
-                        <input
+                    <Input
                             type="password"
                             id="confirmPassword"
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
+                            name="confirmpassword"
+                            placeholder="Confirm password"
                             value={formData.confirmPassword}
                             onChange={handleChange}
-                            required
                         />
                     </div>
                     <div>
-                        <input
+                        <Input
                             type="firstName"
                             id="firstName"
                             name="firstName"
-                            placeholder="firstName"
+                            placeholder="First Name"
                             value={formData.firstName}
                             onChange={handleChange}
-                            required
                         />
                     </div>
                     <div>
-                        <input
+                        <Input
                             type="lastName"
                             id="lastName"
                             name="lastName"
-                            placeholder="lastName"
+                            placeholder="Last Name"
                             value={formData.lastName}
                             onChange={handleChange}
-                            required
                         />
                     </div>
                     <div>
-                        <button type="submit">Register</button>
+                        <button type="submit" className="w-full text-xl font-main btn-primary">Register</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import apiService from "../../../api/axios";
 import Input from "../../../components/UI/Input";
@@ -80,6 +80,8 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
+        <p>Demo user: <b>demo</b> password: <b>demo</b></p>
+        <p>No account? <Link className="underline" to="/register">register</Link></p>
       </div>
     </div>
   );
