@@ -70,7 +70,7 @@ const RegisterForm = () => {
                     <Input
                             type="password"
                             id="confirmPassword"
-                            name="confirmpassword"
+                            name="confirmPassword"
                             placeholder="Confirm password"
                             value={formData.confirmPassword}
                             onChange={handleChange}
