@@ -12,8 +12,10 @@ interface PostProps {
 const PostContainer = (PostProps: PostProps) => {
   return (
     <div key={PostProps.id} className="w-80 2xl:w-96 h-auto">
-      {PostProps.imagePath !==  'none' ? <img src={`http://localhost:4000/static/${PostProps.imagePath}`}/>: <div className="w-80 2xl:w-96 h-60 bg-neutral-800 mb-8"></div>}
-      
+
+      <div className="w-80 2xl:w-96 h-60 bg-neutral-800 mb-8">
+        {PostProps.imagePath !==  'none' && <img className="object-cover w-full h-60" src={`http://localhost:4000/static/${PostProps.imagePath}`}/> }
+      </div>
       <h3 className="text-2xl tracking-tight text-gray-900 mb-3 my-3 font-main font-bold">
         <Link to={`/posts/${PostProps.id}`}>{PostProps.title}</Link>
       </h3>
