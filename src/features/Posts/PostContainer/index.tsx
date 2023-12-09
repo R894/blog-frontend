@@ -7,6 +7,7 @@ interface PostProps {
   createdAt: string;
   imagePath: string;
   userId: string;
+  userName: string;
 }
 
 const PostContainer = (PostProps: PostProps) => {
@@ -20,7 +21,7 @@ const PostContainer = (PostProps: PostProps) => {
         <Link to={`/posts/${PostProps.id}`}>{PostProps.title}</Link>
       </h3>
       <p className="text-gray-400 text-sm">
-        {new Date(PostProps.createdAt).toLocaleString()} • {PostProps.userId}
+        {new Date(PostProps.createdAt).toLocaleString()} • {PostProps.userName}
       </p>
 
       <p>{reduceString(PostProps.content, 150)}</p>

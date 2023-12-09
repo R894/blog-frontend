@@ -11,6 +11,7 @@ interface DataProps {
   content: string;
   userId: number;
   imagePath: string;
+  userName:string;
 }
 
 const GetPost = () => {
@@ -23,6 +24,7 @@ const GetPost = () => {
     content: "",
     imagePath: "",
     userId: 0,
+    userName: "",
   });
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const GetPost = () => {
           {data.imagePath != 'none'? <img src={`http://localhost:4000/static/${data.imagePath}`}/> : null }
           <h3 className="text-3xl font-bold mb-4 font-main text-center">{data.title}</h3>
           <p className="text-gray-600 text-sm text-center">
-            {new Date(data.createdAt).toLocaleString()} by {data.userId}
+            {new Date(data.createdAt).toLocaleString()} by {data.userName}
           </p>
           <p className="mt-4">{data.content}</p>
           <Comments/>
