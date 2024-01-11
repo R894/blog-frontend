@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const { auth } = useAuth();
-  const [authenticated, setAuthenticated] = useState(!!auth.token);
+  const [authenticated, setAuthenticated] = useState<string | undefined>(undefined);
   useEffect(() => {
     console.log("Auth state changed:", auth.token);
-    setAuthenticated(!!auth.token);
+    setAuthenticated(auth.token);
   }, [auth.token]);
 
   const renderLinks = () => {
@@ -49,9 +49,6 @@ const Navbar = () => {
             <Link to="/">
               <img src={Logo} alt="" className="h-14 w-44" />
             </Link>
-          </ul>
-          <ul className="flex flex-col justify-center">
-            <Link to="/">Home</Link>
           </ul>
           <ul className="flex flex-col justify-center">
             <Link to="/about">About</Link>

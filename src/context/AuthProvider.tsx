@@ -2,9 +2,9 @@ import { createContext, ReactNode, useState, useEffect } from "react";
 
 interface AuthContextType {
     auth: {
-      token?: string | undefined;
+      token?: string;
     };
-    setAuth: (auth: { token?: string | undefined }) => void;
+    setAuth: (auth: { token?: string }) => void;
   }
 
 const defaultAuthContext: AuthContextType = {
@@ -19,16 +19,15 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-    const [auth, setAuth] = useState<{ token?: string | undefined }>(() => {
-      const storedToken = localStorage.getItem("authToken");
-      return { token: storedToken || undefined };
-    });
+    const [auth, setAuth] = useState<{token?: string }>({});
   
     useEffect(() => {
+      if(!auth) return;
+
       if (auth.token) {
-        localStorage.setItem("authToken", auth.token);
+        localStorage.setItem("accessToken", auth.token);
       } else {
-        localStorage.removeItem("authToken");
+        localStorage.removeItem("accessToken");
       }
     }, [auth]);
   
