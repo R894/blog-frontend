@@ -36,10 +36,10 @@ const Posts = () => {
   return (
     <>
       {isLoading ? (
-        <p className="text-2xl mb-8 font-bold">Loading...</p>
+        <p className="text-2xl mb-8 font-bold flex-grow">Loading...</p>
       ) : (
         <>
-          <div className="border-b-2">
+          <div className="border-b-2 flex-grow">
             <div className="mb-8 w-full flex items-center gap-1">
               <div className="text-md font-bold">Stories</div>
               <div className="w-1/6 border-b-2 flex-shrink-0 border-black"></div>
