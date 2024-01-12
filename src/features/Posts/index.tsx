@@ -20,6 +20,7 @@ const Posts = () => {
   const [maxPage, setMaxPage] = useState();
 
   useEffect(() => {
+    setIsLoading(true)
     apiService
       .viewPosts(page)
       .then((res) => {
@@ -30,7 +31,8 @@ const Posts = () => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-      });
+      })
+      .finally(()=>{setIsLoading(false)});
   }, [page]);
 
   return (
